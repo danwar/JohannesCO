@@ -6,5 +6,6 @@
     <string name="alarms">Alarms</string>
     <string name="settings">Settings</string>
     <string name="title">Sleep               Wake</string>
+    <string name="sleep_info">Sleep Info</string>
 
 </resources>

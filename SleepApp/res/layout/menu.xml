@@ -7,7 +7,7 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="80dp"/>
+        android:layout_height="40dp"/>
 
     <Button
         android:id="@+id/schema_button"
@@ -18,7 +18,7 @@
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"/>
+        android:layout_height="20dp"/>
 
     <Button
         android:id="@+id/button2"
@@ -29,13 +29,23 @@
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"/>
-
+        android:layout_height="20dp"/>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="@string/sleep_info" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"/>
+
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_gravity="top"
         android:text="@string/settings" />
 
 </LinearLayout>

@@ -65,6 +65,7 @@ public class SchemaActivity extends Activity {
         updateDisplay();
         //TODO fixa så att updateDisplay uppdaterar alla textfält (snyggt)
         //TODO 24h-format i dialogen
+        //TODO välj veckodag i dialogen
     }
         
     
