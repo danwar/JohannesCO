@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <TextView
+        android:id="@+id/timeDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/timeDisplay1"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"/>
+
+    <TextView
+        android:id="@+id/timeDisplay2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+
+    <TextView
+        android:id="@+id/timeDisplay3"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+
+    <TextView
+        android:id="@+id/timeDisplay4"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"/>
+
+    <TextView
+        android:id="@+id/timeDisplay5"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"/>
+
+    <Button android:id="@+id/pickTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_text"/>
+</LinearLayout>
