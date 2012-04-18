@@ -1,4 +1,3 @@
-//http://developer.android.com/resources/tutorials/views/hello-timepicker.html
 
 package johannes.co.sleepapp;
 
@@ -21,7 +20,6 @@ public class SleepAppActivity extends Activity {
 
     private int mHour;
     private int mMinute;
-    private int day = 0;
 
     static final int TIME_DIALOG_ID = 0;
     
@@ -32,8 +30,7 @@ public class SleepAppActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        // capture our View elements
-        
+        // capture our View elements        
         mTimeDisplay = (TextView) findViewById(R.id.timeDisplay);
         mTimeDisplay1 = (TextView) findViewById(R.id.timeDisplay1);
         mTimeDisplay2 = (TextView) findViewById(R.id.timeDisplay2);
@@ -54,19 +51,88 @@ public class SleepAppActivity extends Activity {
 
         // display the current date
         updateDisplay();
-        //TODO fixa så att updateDisplay uppdaterar alla textfält
+        //TODO fixa så att updateDisplay uppdaterar alla textfält (snyggt)
+        //TODO 24h-format i dialogen
     }
         
     
     
  // updates the time we display in the TextView
     private void updateDisplay() {
+    	int day = 0, wakeDay = 0, wakeHour;
     	    		
+    	if (mHour>15){
+    		wakeHour = mHour - 16;
+    		wakeDay++;
+    	}
+    	else 
+    		wakeHour = mHour + 8;
     	mTimeDisplay.setText(
     			new StringBuilder()
-    				.append(pad(mHour)).append(":")
-    				.append(pad(mMinute)).append(("    " + day)));
+    			.append(pad(mHour)).append(":")
+				.append(pad(mMinute)).append(("    " + day +"\t\t\t\t"))
+				.append(pad(wakeHour)).append(":")
+				.append(pad(mMinute)).append(("    " + wakeDay)));  
     	
+    	mHour = mHour+4;
+    	day++;
+    	if (mHour>23){
+    		mHour = mHour-24;
+    		day++;
+    	}
+    	wakeDay = day;
+    	if (mHour>15){
+    		wakeHour = mHour - 16;
+    		wakeDay++;
+    	}
+    	else 
+    		wakeHour = mHour + 8;
+    	mTimeDisplay1.setText(
+    			new StringBuilder()
+    			.append(pad(mHour)).append(":")
+				.append(pad(mMinute)).append(("    " + day +"\t\t\t\t"))
+				.append(pad(wakeHour)).append(":")
+				.append(pad(mMinute)).append(("    " + wakeDay)));  
+    	
+    	mHour = mHour+4;
+    	day++;
+    	if (mHour>23){
+    		mHour = mHour-24;
+    		day++;
+    	}
+    	wakeDay = day;
+    	if (mHour>15){
+    		wakeHour = mHour - 16;
+    		wakeDay++;
+    	}
+    	else 
+    		wakeHour = mHour + 8;
+    	mTimeDisplay2.setText(
+    			new StringBuilder()
+    			.append(pad(mHour)).append(":")
+				.append(pad(mMinute)).append(("    " + day +"\t\t\t\t"))
+				.append(pad(wakeHour)).append(":")
+				.append(pad(mMinute)).append(("    " + wakeDay)));   
+    	
+    	mHour = mHour+4;
+    	day++;
+    	if (mHour>23){
+    		mHour = mHour-24;
+    		day++;
+    	}
+    	wakeDay = day;
+    	if (mHour>15){
+    		wakeHour = mHour - 16;
+    		wakeDay++;
+    	}
+    	else 
+    		wakeHour = mHour + 8;
+    	mTimeDisplay3.setText(
+    			new StringBuilder()
+    			.append(pad(mHour)).append(":")
+				.append(pad(mMinute)).append(("    " + day +"\t\t\t\t"))
+				.append(pad(wakeHour)).append(":")
+				.append(pad(mMinute)).append(("    " + wakeDay)));    	
     }
 
     private static String pad(int c) {
