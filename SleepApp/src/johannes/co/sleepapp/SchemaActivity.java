@@ -91,7 +91,7 @@ public class SchemaActivity extends Activity {
         	mTimeDisplay[i].setText(
         			new StringBuilder()
         			.append(pad(mHour)).append(":")
-    				.append(pad(mMinute)).append(("    " + weekDay[day] +"\t\t\t\t"))
+    				.append(pad(mMinute)).append(("    " + weekDay[day] +"\t\t\t\t\t\t"))
     				.append(pad(wakeHour)).append(":")
     				.append(pad(mMinute)).append(("    " + weekDay[wakeDay])));  
     		
