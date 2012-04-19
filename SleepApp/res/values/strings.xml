@@ -2,5 +2,12 @@
 <resources>
     <string name="app_name">SleepApp</string>
     <string name="button_text">Set new time</string>
+    <string name="schema">Schema</string>
+    <string name="alarms">Alarms</string>
+    <string name="settings">Settings</string>
+    <string name="title">Sleep               Wake</string>
+    <string name="sleep_info">Sleep Info</string>
+    <string name="wake_up">Wake up at</string>
+    <string name="go_to_sleep">Go to sleep at</string>
 
 </resources>
