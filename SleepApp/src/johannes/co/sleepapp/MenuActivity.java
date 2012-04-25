@@ -28,11 +28,6 @@ public class MenuActivity extends Activity implements OnClickListener {
        alarmButton.setOnClickListener(this);
        sleepInfoButton.setOnClickListener(this);
        settingsButton.setOnClickListener(this);
-
-       
-       alarmButton = (Button)findViewById(R.id.alarm_button);   
-       
-       alarmButton.setOnClickListener(this);
         
     }
     
@@ -53,12 +48,12 @@ public class MenuActivity extends Activity implements OnClickListener {
     		case R.id.sleep_info_button:
     			Intent intent2 = new Intent(this, SleepInfoActivity.class);
     			startActivity(intent2);
-    			break;
+    		break;
     			
     		case R.id.settings_button:
-    			Intent intent3= new Intent(this, SettingsActivity.class);
+    			Intent intent3 = new Intent(this, SettingsActivity.class);
     			startActivity(intent3);
-    			break;
+    		break;
     	}
     }
 }
