@@ -11,7 +11,7 @@ import android.widget.Button;
 
 public class MenuActivity extends Activity implements OnClickListener {
     
-	private Button schemaButton;
+	private Button schemaButton, alarmButton;
 	
     /** Called when the activity is first created. */
     @Override
@@ -22,12 +22,24 @@ public class MenuActivity extends Activity implements OnClickListener {
        schemaButton = (Button)findViewById(R.id.schema_button);   
        
        schemaButton.setOnClickListener(this);
+       
+       alarmButton = (Button)findViewById(R.id.alarm_button);   
+       
+       alarmButton.setOnClickListener(this);
         
     }
 
-	public void onClick(View arg0) {
-		Intent intent = new Intent(this, SchemaActivity.class);
-		startActivity(intent);
-		
+	public void onClick(View button) {
+		switch (button.getId()) {
+		case R.id.schema_button:
+			Intent intent = new Intent(this, SchemaActivity.class);
+			startActivity(intent);
+			break;
+			
+		case R.id.alarm_button:
+			Intent intent1 = new Intent(this, AlarmActivity.class);
+			startActivity(intent1);
+				break;
+		}		
 	}
 }
