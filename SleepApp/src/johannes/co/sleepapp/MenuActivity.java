@@ -11,13 +11,9 @@ import android.widget.Button;
 
 public class MenuActivity extends Activity implements OnClickListener {
     
-<<<<<<< HEAD
 	private Button schemaButton, alarmButton, sleepInfoButton, settingsButton;
-=======
-	private Button schemaButton, alarmButton;
->>>>>>> 02e5f8b66d715b8097683a6d1fc761481efe3587
-	
-    /** Called when the activity is first created. */
+
+/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,16 +25,14 @@ public class MenuActivity extends Activity implements OnClickListener {
        settingsButton = (Button)findViewById(R.id.settings_button); 
        
        schemaButton.setOnClickListener(this);
-<<<<<<< HEAD
        alarmButton.setOnClickListener(this);
        sleepInfoButton.setOnClickListener(this);
        settingsButton.setOnClickListener(this);
-=======
+
        
        alarmButton = (Button)findViewById(R.id.alarm_button);   
        
        alarmButton.setOnClickListener(this);
->>>>>>> 02e5f8b66d715b8097683a6d1fc761481efe3587
         
     }
     
@@ -67,21 +61,4 @@ public class MenuActivity extends Activity implements OnClickListener {
     			break;
     	}
     }
-
-<<<<<<< HEAD
-=======
-	public void onClick(View button) {
-		switch (button.getId()) {
-		case R.id.schema_button:
-			Intent intent = new Intent(this, SchemaActivity.class);
-			startActivity(intent);
-			break;
-			
-		case R.id.alarm_button:
-			Intent intent1 = new Intent(this, AlarmActivity.class);
-			startActivity(intent1);
-				break;
-		}		
-	}
->>>>>>> 02e5f8b66d715b8097683a6d1fc761481efe3587
 }
