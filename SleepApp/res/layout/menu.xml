@@ -32,7 +32,7 @@
         android:layout_height="20dp"/>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/sleep_info_button"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:text="@string/sleep_info" />
@@ -43,7 +43,7 @@
         android:layout_height="20dp"/>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/settings_button"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:text="@string/settings" />
