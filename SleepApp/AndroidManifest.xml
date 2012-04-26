@@ -24,7 +24,7 @@
         <activity android:name=".SchemaActivity" />
         <activity android:name=".AlarmActivity" />
         <activity android:name="SleepInfoActivity" />
-        <activity android:name="SettingsActivity" />
+        <activity android:name="edu.chalmers.dat255.johannesco.sleepapp.main.SettingsActivity" />
     </application>
 
 </manifest>
