@@ -186,6 +186,7 @@ public final class R {
         public static final int tabs_1_tab_1=0x7f040009;
         public static final int tabs_1_tab_2=0x7f04000a;
         public static final int tabs_1_tab_3=0x7f04000b;
+        public static final int test=0x7f040094;
         public static final int text_to_speech=0x7f040092;
         public static final int title=0x7f040005;
         public static final int toggle_dogs=0x7f040038;

@@ -216,5 +216,6 @@
 
     <string name="text_to_speech">App/Text-To-Speech</string>
     <string name="again">Again</string>
+    <string name="test">test</string>
  
 </resources>

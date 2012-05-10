@@ -16,15 +16,37 @@
         <activity 
             android:name=".MenuActivity"
             android:label="@string/app_name">
-            <intent-filter>
+       		<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".SchemaActivity" />
-        <activity android:name=".AlarmActivity" />
+        
         <activity android:name="SleepInfoActivity" />
         <activity android:name="edu.chalmers.dat255.johannesco.sleepapp.main.SettingsActivity" />
+        
+        
+        <receiver android:name=".OneShotAlarm" android:process=":remote" />
+
+        <receiver android:name=".RepeatingAlarm" android:process=":remote" />
+
+        <activity android:name=".AlarmController" android:label="@string/activity_alarm_controller">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".AlarmActivity_Service" android:process=":remote" />
+
+        <activity android:name=".AlarmActivity" android:label="@string/activity_alarm_service">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        
     </application>
 
 </manifest>

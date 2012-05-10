@@ -71,6 +71,7 @@ public class AlarmActivity_Service extends Service {
         public void run() {
             // Normally we would do some work here...  for our sample, we will
             // just sleep for 30 seconds.
+        	
             long endTime = System.currentTimeMillis() + 15*1000;
             while (System.currentTimeMillis() < endTime) {
                 synchronized (mBinder) {
@@ -94,7 +95,8 @@ public class AlarmActivity_Service extends Service {
     /**
      * Show a notification while this service is running.
      */
-    private void showNotification() {
+    @SuppressWarnings("deprecation")
+	private void showNotification() {
         // In this sample, we'll use the same text for the ticker and the expanded notification
         CharSequence text = getText(R.string.alarm_service_started);
 
