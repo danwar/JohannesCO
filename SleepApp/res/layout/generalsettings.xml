@@ -10,10 +10,10 @@
         android:layout_height="40dp"/>
 
     <Button
-        android:id="@+id/generalSettings_button"
+        android:id="@+id/changeoption1_button"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="General Settings" />
+        android:text="Change Option 1" />
 
     <TextView
         android:id="@+id/textView2"
@@ -21,10 +21,10 @@
         android:layout_height="20dp"/>
 
     <Button
-        android:id="@+id/schemaSettings_button"
+        android:id="@+id/changeoption2_button"
         android:layout_width="fill_parent"
         android:layout_height="70dp"
-        android:text="Schema Settings" />
+        android:text="Change Option 2" />
 
     <TextView
         android:id="@+id/textView3"
@@ -32,10 +32,10 @@
         android:layout_height="20dp"/>
 
     <Button
-        android:id="@+id/about_button"
+        android:id="@+id/changeoption3_button"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="About" />
+        android:text="Change Option 3" />
        
     <TextView
         android:id="@+id/textView4"
