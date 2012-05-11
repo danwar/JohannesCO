@@ -59,8 +59,9 @@ import android.widget.Toast;
  * be started.  This is useful when you want to schedule alarms that initiate
  * long-running operations, such as retrieving recent e-mails.
  */
-public class AlarmActivity extends Activity {
+public class AlarmActivity extends Activity implements OnClickListener{
     private PendingIntent mAlarmSender;
+    private Button backButton;
 
     @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +79,8 @@ public class AlarmActivity extends Activity {
         button.setOnClickListener(mStartAlarmListener);
         button = (Button)findViewById(R.id.stop_alarm);
         button.setOnClickListener(mStopAlarmListener);
+        backButton = (Button)findViewById(R.id.back_button); 
+        backButton.setOnClickListener(this);
     }
 
     private OnClickListener mStartAlarmListener = new OnClickListener() {
@@ -108,4 +111,21 @@ public class AlarmActivity extends Activity {
 
         }
     };
+
+//    Går inte att ha 2 onCLick :(
+//    public void onClick(View button) {
+//    	
+//    	switch (button.getId()) {
+//    			
+//    		case R.id.back_button:
+//    			Intent intent3 = new Intent(this, MenuActivity.class);
+//    			startActivity(intent3);
+//    		break;
+//    	}
+//    }
+    
+	public void onClick(View arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 }

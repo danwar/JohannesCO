@@ -6,21 +6,23 @@ import java.util.Calendar;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 //import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 
-public class SchemaActivity extends Activity {
+public class SchemaActivity extends Activity implements OnClickListener {
 	
 //	public SQLiteDatabase db;
 	
 	private TextView[] mTimeDisplay = new TextView[6];
 //    private TextView mTimeDisplay, mTimeDisplay1, mTimeDisplay2, mTimeDisplay3, mTimeDisplay4, mTimeDisplay5;
-    private Button mPickTime;
+    private Button mPickTime, backButton;
 
     private String[] weekDay = new String[7]; 
     private int mHour;
@@ -52,6 +54,9 @@ public class SchemaActivity extends Activity {
         mTimeDisplay[4] = (TextView) findViewById(R.id.timeDisplay4);
         mTimeDisplay[5] = (TextView) findViewById(R.id.timeDisplay5);
         mPickTime = (Button) findViewById(R.id.pickTime);
+        backButton = (Button)findViewById(R.id.back_button); 
+        
+        backButton.setOnClickListener(this);
 
         // add a click listener to the button
         mPickTime.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +77,16 @@ public class SchemaActivity extends Activity {
         //TODO välj veckodag i dialogen
         
     }
-        
+    public void onClick(View button) {
+    	
+    	switch (button.getId()) {
+    			
+    		case R.id.back_button:
+    			Intent intent3 = new Intent(this, MenuActivity.class);
+    			startActivity(intent3);
+    		break;
+    	}
+    }
     
     
  // updates the time we display in the TextView

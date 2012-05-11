@@ -9,7 +9,7 @@ public class SchemaSettings extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
-	    setContentView(R.layout.sleepinfo);
+	    setContentView(R.layout.schemasettings);
 	
 	    // TODO Auto-generated method stub
 	}

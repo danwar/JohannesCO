@@ -4,13 +4,13 @@ package edu.chalmers.dat255.johannesco.sleepapp.main;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class generalSettings extends Activity {
+public class GeneralSettings extends Activity {
 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
-	    setContentView(R.layout.sleepinfo);
+	    setContentView(R.layout.generalsettings);
 	
 	    // TODO Auto-generated method stub
 	}
