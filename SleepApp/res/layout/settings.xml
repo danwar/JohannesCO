@@ -13,7 +13,7 @@
         android:id="@+id/generalSettings_button"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="@string/schema" />
+        android:text="General Settings" />
 
     <TextView
         android:id="@+id/textView2"
@@ -24,7 +24,7 @@
         android:id="@+id/schemaSettings_button"
         android:layout_width="fill_parent"
         android:layout_height="70dp"
-        android:text="@string/alarms" />
+        android:text="Schema Settings" />
 
     <TextView
         android:id="@+id/textView3"
@@ -35,7 +35,7 @@
         android:id="@+id/about_button"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="@string/sleep_info" />
+        android:text="About" />
        
     <TextView
         android:id="@+id/textView4"
@@ -46,6 +46,6 @@
         android:id="@+id/backActivity_button"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="@string/sleep_info" />
+        android:text="Back" />
 
 </LinearLayout>
