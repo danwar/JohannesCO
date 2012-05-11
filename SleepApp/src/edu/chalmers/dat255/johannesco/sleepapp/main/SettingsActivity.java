@@ -9,23 +9,24 @@ import android.widget.Button;
 
 	    	
 	    public class SettingsActivity extends Activity implements OnClickListener  {  	
-
+	    	
+	    	private Button generalSettingsButton, schemaSettingsButton, aboutButton, backButton;
+	    	
 	    /** Called when the activity is first created. */
 	        @Override
 	        public void onCreate(Bundle savedInstanceState) {
-	            super.onCreate(savedInstanceState);
-	            setContentView(R.layout.settings);
-	            private Button generalSettings, schemaSettings, about, back;
-	            
-	           generalSettings = (Button)findViewById(R.id.generalSettings_Button); 
-	           schemaSettings = (Button)findViewById(R.id.schemaSettings_Button); 
-	           about = (Button)findViewById(R.id.about_Button); 
-	           back = (Button)findViewById(R.id.back_Button); 
-	           
-	           generalSettings.setOnClickListener(this);
-	           schemaSettings.setOnClickListener(this);
-	           about.setOnClickListener(this);
-	           back.setOnClickListener(this);
+				super.onCreate(savedInstanceState);
+				setContentView(R.layout.settings);   
+				    
+				generalSettingsButton = (Button)findViewById(R.id.generalSettings_button); 
+				schemaSettingsButton = (Button)findViewById(R.id.schemaSettings_button);    
+				aboutButton = (Button)findViewById(R.id.about_button); 
+				backButton = (Button)findViewById(R.id.back_button); 
+   
+				generalSettingsButton.setOnClickListener(this);
+				schemaSettingsButton.setOnClickListener(this);
+			   	aboutButton.setOnClickListener(this);
+				backButton.setOnClickListener(this);
 	            
 	        }
 	        
@@ -33,23 +34,23 @@ import android.widget.Button;
 	        	
 	        	switch (button.getId()) {
 	        	
-	        		case R.id.generalSettings_Button:
-	        			Intent intent = new Intent(this, generalSettings.class);
+	        		case R.id.generalSettings_button:
+	        			Intent intent = new Intent(this, GeneralSettings.class);
 	        			startActivity(intent);
 	        		break;
 
-	        		case R.id.schemaSettings:
-	        			Intent intent1 = new Intent(this, schemaSettings.class);
+	        		case R.id.schemaSettings_button:
+	        			Intent intent1 = new Intent(this, SchemaSettings.class);
 	        			startActivity(intent1);
 	        		break;
 	        		
-	        		case R.id.about:
-	        			Intent intent2 = new Intent(this, about.class);
+	        		case R.id.about_button:
+	        			Intent intent2 = new Intent(this, About.class);
 	        			startActivity(intent2);
 	        		break;
 	        			
-	        		case R.id.back:
-	        			Intent intent3 = new Intent(this, back.class);
+	        		case R.id.back_button:
+	        			Intent intent3 = new Intent(this, MenuActivity.class);
 	        			startActivity(intent3);
 	        		break;
 	        	}
@@ -57,6 +58,3 @@ import android.widget.Button;
 	    }
 	
 	    // TODO Auto-generated method stub
-	}
-
-}
