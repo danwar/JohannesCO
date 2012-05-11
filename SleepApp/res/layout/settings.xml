@@ -4,10 +4,48 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/button1"
+ <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_height="40dp"/>
+
+    <Button
+        android:id="@+id/generalSettings_button"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="@string/schema" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"/>
+
+    <Button
+        android:id="@+id/schemaSettings_button"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:text="@string/alarms" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"/>
+
+    <Button
+        android:id="@+id/about_button"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="@string/sleep_info" />
+       
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"/>
+
+    <Button
+        android:id="@+id/backActivity_button"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="@string/sleep_info" />
 
 </LinearLayout>
