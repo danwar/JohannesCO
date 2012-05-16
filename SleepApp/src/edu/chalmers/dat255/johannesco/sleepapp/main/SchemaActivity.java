@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 //import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -18,14 +19,14 @@ import android.widget.TimePicker;
 
 public class SchemaActivity extends Activity implements OnClickListener {
 	
-//	public SQLiteDatabase db;
+	public SQLiteDatabase db;
 	
 	private TextView[] mTimeDisplay = new TextView[6];
 //    private TextView mTimeDisplay, mTimeDisplay1, mTimeDisplay2, mTimeDisplay3, mTimeDisplay4, mTimeDisplay5;
     private Button mPickTime, backButton;
 
     private String[] weekDay = new String[7]; 
-//    public int[] timeMillis = new int[7];
+    public long timeMillis;
     private int mHour, mDay, mMinute; 
 
     static final int TIME_DIALOG_ID = 0;
@@ -74,7 +75,7 @@ public class SchemaActivity extends Activity implements OnClickListener {
         mDay = c.get(Calendar.DAY_OF_WEEK); 
 
         // display the current date
-        updateDisplay();
+//        updateDisplay();
         
         //TODO 24h-format i dialogen
         //TODO välj veckodag i dialogen
@@ -95,7 +96,8 @@ public class SchemaActivity extends Activity implements OnClickListener {
  // updates the time we display in the TextView
     private void updateDisplay() {
     	int wakeDay = 0, wakeHour, day = mDay-1;
-
+    	
+    	convertToMillis(mHour, mMinute);
     	
     	for (int i=0; i<6; i++){
     		
@@ -115,7 +117,7 @@ public class SchemaActivity extends Activity implements OnClickListener {
     		
 //    		db.beginTransaction();
 //    		   try {
-//    		     INSERT mHour INTO 
+//    		     "INSERT INTO " + Wake_Up_Times + " test1 VALUES(" + mHour + ")"
 //    		     db.setTransactionSuccessful();
 //    		   } finally {
 //    		     db.endTransaction();
@@ -166,7 +168,7 @@ public class SchemaActivity extends Activity implements OnClickListener {
         }
 
         
-//        public void convertToMillis(int hour, int min, int i){
-//        	timeMillis[i] = hour * 60 * 60 * 1000 + min;
-//        }
+        public void convertToMillis(int hour, int min){
+        	timeMillis = hour * 60 * 60 * 1000 + min;
+        }
 }
