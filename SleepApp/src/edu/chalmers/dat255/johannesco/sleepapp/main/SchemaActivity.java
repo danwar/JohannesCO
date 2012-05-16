@@ -25,8 +25,8 @@ public class SchemaActivity extends Activity implements OnClickListener {
     private Button mPickTime, backButton;
 
     private String[] weekDay = new String[7]; 
-    private int mHour;
-    private int mMinute;
+//    public int[] timeMillis = new int[7];
+    private int mHour, mDay, mMinute; 
 
     static final int TIME_DIALOG_ID = 0;
     
@@ -37,13 +37,13 @@ public class SchemaActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.schema);
         
-        weekDay[0] = "Mon";
-        weekDay[1] = "Tue";
-        weekDay[2] = "Wed";
-        weekDay[3] = "Thu";
-        weekDay[4] = "Fri\t";
-        weekDay[5] = "Sat";
-        weekDay[6] = "Sun"; 
+        weekDay[0] = "Sun";
+        weekDay[1] = "Mon";
+        weekDay[2] = "Tue";
+        weekDay[3] = "Wed";
+        weekDay[4] = "Thu";
+        weekDay[5] = "Fri\t";
+        weekDay[6] = "Sat";         
         
 
         // capture our View elements        
@@ -60,7 +60,8 @@ public class SchemaActivity extends Activity implements OnClickListener {
 
         // add a click listener to the button
         mPickTime.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+            @SuppressWarnings("deprecation")
+			public void onClick(View v) {
                 showDialog(TIME_DIALOG_ID);
             }
         });
@@ -69,6 +70,8 @@ public class SchemaActivity extends Activity implements OnClickListener {
         final Calendar c = Calendar.getInstance();
         mHour = c.get(Calendar.HOUR_OF_DAY);
         mMinute = c.get(Calendar.MINUTE);
+        //Get current day. If current day is Sunday, mDay=1
+        mDay = c.get(Calendar.DAY_OF_WEEK); 
 
         // display the current date
         updateDisplay();
@@ -91,9 +94,14 @@ public class SchemaActivity extends Activity implements OnClickListener {
     
  // updates the time we display in the TextView
     private void updateDisplay() {
-    	int day = 0, wakeDay = 0, wakeHour;
+    	int wakeDay = 0, wakeHour, day = mDay-1;
+
     	
     	for (int i=0; i<6; i++){
+    		
+    		if (day>6){
+    			day=0;
+    		}
     		
     		wakeDay = day;
     		if (mHour>15){
@@ -156,4 +164,9 @@ public class SchemaActivity extends Activity implements OnClickListener {
             }
             return null;
         }
+
+        
+//        public void convertToMillis(int hour, int min, int i){
+//        	timeMillis[i] = hour * 60 * 60 * 1000 + min;
+//        }
 }

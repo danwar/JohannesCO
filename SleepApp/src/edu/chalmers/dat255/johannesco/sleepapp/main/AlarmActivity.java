@@ -1,46 +1,5 @@
-//package edu.chalmers.dat255.johannesco.sleepapp.main;
-//
-//import johannes.co.sleepapp.R;
-//import android.app.Activity;
-//import android.content.Context;
-//import android.os.Bundle;
-//
-//
-//
-//public class AlarmActivity extends Activity {
-//	@Override
-//	public void onCreate(Bundle savedInstanceState) {
-//		super.onCreate(savedInstanceState);
-//		setContentView(R.layout.alarm);
-//		
-//		Object AlarmActivity = Context.getSystemService(Context.ALARM_SERVICE);
-//		
-//		
-//		
-//	}
-//}
-//
-
-/*
- * Copyright (C) 2007 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package edu.chalmers.dat255.johannesco.sleepapp.main;
 
-// Need the following import to get access to the app resources, since this
-// class is in a sub-package.
 
 import android.app.Activity;
 import android.app.AlarmManager;
@@ -54,11 +13,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
-/**
- * This demonstrates how you can schedule an alarm that causes a service to
- * be started.  This is useful when you want to schedule alarms that initiate
- * long-running operations, such as retrieving recent e-mails.
- */
 public class AlarmActivity extends Activity implements OnClickListener{
     private PendingIntent mAlarmSender;
     private Button backButton;
@@ -112,20 +66,16 @@ public class AlarmActivity extends Activity implements OnClickListener{
         }
     };
 
-//    Går inte att ha 2 onCLick :(
-//    public void onClick(View button) {
-//    	
-//    	switch (button.getId()) {
-//    			
-//    		case R.id.back_button:
-//    			Intent intent3 = new Intent(this, MenuActivity.class);
-//    			startActivity(intent3);
-//    		break;
-//    	}
-//    }
+    public void onClick(View button) {
+    	
+    	switch (button.getId()) {
+    			
+    		case R.id.back_button:
+    			Intent intent3 = new Intent(this, MenuActivity.class);
+    			startActivity(intent3);
+    		break;
+    	}
+    }
     
-	public void onClick(View arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+
 }
