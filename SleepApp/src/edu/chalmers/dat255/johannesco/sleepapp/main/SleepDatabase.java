@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class SleepDatabase extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 2;
-    private static final String SLEEP_TABLE_NAME = "Wake_Up_Times";
+    private static final String SLEEP_TABLE_NAME = "WUT";
     private static final String DATABASE_NAME = "test";
     private static final String KEY_WORD = "test1";
 //    private static final String KEY_DEFINITION = "test2";

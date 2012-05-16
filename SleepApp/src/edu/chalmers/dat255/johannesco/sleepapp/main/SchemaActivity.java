@@ -117,7 +117,7 @@ public class SchemaActivity extends Activity implements OnClickListener {
     		
 //    		db.beginTransaction();
 //    		   try {
-//    		     "INSERT INTO " + Wake_Up_Times + " test1 VALUES(" + mHour + ")"
+    			   db.execSQL("INSERT INTO WUT (test1) " + "VALUES (" + mHour + ")", null);
 //    		     db.setTransactionSuccessful();
 //    		   } finally {
 //    		     db.endTransaction();

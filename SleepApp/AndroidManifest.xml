@@ -22,6 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".SchemaActivity" />
+        <activity android:name=".GeneralSettings" />
+        <activity android:name=".SchemaSettings" />
+        <activity android:name=".About" />
         
         <activity android:name="SleepInfoActivity" />
         <activity android:name="edu.chalmers.dat255.johannesco.sleepapp.main.SettingsActivity" />
