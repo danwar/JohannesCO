@@ -5,9 +5,15 @@
     android:orientation="vertical" >
 
     <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
+        android:id="@+id/generalSleepInfo_Button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="General sleep info" />
+
+    <Button
+        android:id="@+id/sleepStyles_Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SleepStyles" />
 
 </LinearLayout>
