@@ -31,7 +31,8 @@ import android.widget.Button;
 	        public void onCreate(Bundle savedInstanceState) {
 				super.onCreate(savedInstanceState);
 				setContentView(R.layout.settings);   
-				    
+				
+				// Watch for button clicks.
 				generalSettingsButton = (Button)findViewById(R.id.generalSettings_button); 
 				schemaSettingsButton = (Button)findViewById(R.id.schemaSettings_button);    
 				aboutButton = (Button)findViewById(R.id.about_button); 

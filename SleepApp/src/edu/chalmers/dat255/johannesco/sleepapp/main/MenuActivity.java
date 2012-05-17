@@ -37,6 +37,7 @@ public class MenuActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
         
+       // Watch for button clicks.
        schemaButton = (Button)findViewById(R.id.schema_button); 
        alarmButton = (Button)findViewById(R.id.alarm_button); 
        sleepInfoButton = (Button)findViewById(R.id.sleep_info_button); 
