@@ -28,7 +28,7 @@ import android.widget.TextView;
 
 public class SleepInfoActivity extends Activity implements OnClickListener {
 	
-	private Button generalSleepInfoButton, sleepStylesButton;
+	private Button generalSleepInfoButton, sleepStylesButton, backButton;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -39,10 +39,12 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
 	    //Initializing the buttons
 	    generalSleepInfoButton = (Button)findViewById(R.id.generalSleepInfo_Button); 
 	    sleepStylesButton = (Button)findViewById(R.id.sleepStyles_Button); 
+	    backButton = (Button)findViewById(R.id.back_button); 
 	    
 	    //Giving the buttons sleepInfo Button a listener. 
 	    generalSleepInfoButton.setOnClickListener(this);
 	    sleepStylesButton.setOnClickListener(this);
+        backButton.setOnClickListener(this);
 	    
 	}//onCreate    	
 	    	public void onClick(View v) {
@@ -57,6 +59,11 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
 	    			showSleepStyles();
 	    		break;
 	    		
+    			
+	    		case R.id.back_button:
+	    			Intent intent3 = new Intent(this, MenuActivity.class);
+	    			startActivity(intent3);
+	    		break;
 	    		
 	    		}
 	    		
