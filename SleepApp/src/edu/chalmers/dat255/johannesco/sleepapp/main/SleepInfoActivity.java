@@ -105,13 +105,51 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
             
 	    		dialog.setTitle("Different Sleep Styles");
 	    		
-	    		//set up button
+	    		//set up ubermanbutton
                 Button ubermanButton = (Button) dialog.findViewById(R.id.uberman_button);
                 ubermanButton.setOnClickListener(new OnClickListener() {
+              
                 public void onClick(View v) {
-                        createUbermanDialog();
-                    }
+                	createUbermanDialog();
+                }
                 });
+                
+              //set up monophasicbutton
+                Button monophasicButton = (Button) dialog.findViewById(R.id.monophasic_button);
+                monophasicButton.setOnClickListener(new OnClickListener() {
+              
+                public void onClick(View v) {
+                	createMonophasicDialog();
+                }
+                });
+                
+                //set up biphasicbutton
+                Button biphasicButton = (Button) dialog.findViewById(R.id.biphasic_button);
+                biphasicButton.setOnClickListener(new OnClickListener() {
+              
+                public void onClick(View v) {
+                	createBiphasicDialog();
+                }
+                });
+                
+              //set up dymaxionbutton
+                Button dymaxionButton = (Button) dialog.findViewById(R.id.dymaxion_button);
+                dymaxionButton.setOnClickListener(new OnClickListener() {
+              
+                public void onClick(View v) {
+                	createDymaxionDialog();
+                }
+                });
+                
+              //set up everymanbutton
+                Button everymanButton = (Button) dialog.findViewById(R.id.everyman_button);
+                everymanButton.setOnClickListener(new OnClickListener() {
+              
+                public void onClick(View v) {
+                	createEverymanDialog();
+                }
+                });
+            
             
 	    		//Makes it possible to cancel the dialog using the back button. 
 	    		dialog.setCancelable(true);
@@ -128,7 +166,7 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
 	    		//points to the uberman xml file 
 	    		dialog.setContentView(R.layout.ubermandialog);
             
-	    		dialog.setTitle("Uberman");
+	    		dialog.setTitle("Uberman sleeptype");
             
 	    		//Makes it possible to cancel the dialog using the back key. 
 	    		dialog.setCancelable(true);
@@ -144,7 +182,108 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
 
 	    		//to show the dialog    
 	    		dialog.show();
-	    	}//showGeneralSettings 
+	    	}//ubermanDialog 
+	    	
+	    	private void createMonophasicDialog(){
+	    		//Creates the new dialog 
+	    		Dialog dialog = new Dialog(SleepInfoActivity.this);
+        	
+	    		//points to the monophasic xml file 
+	    		dialog.setContentView(R.layout.monophasicdialog);
+            
+	    		dialog.setTitle("Monophasic sleeptype");
+            
+	    		//Makes it possible to cancel the dialog using the back key. 
+	    		dialog.setCancelable(true);
+            
+	    		//set up text that is to be shown in the dialog box 
+	    		TextView text = (TextView) dialog.findViewById(R.id.monophasictext);
+	    		text.setText(R.string.monophasic_info_text);
+	    		
+	    		//set up image view
+                ImageView img = (ImageView) 
+                dialog.findViewById(R.id.monophasic_picture);
+                img.setImageResource(R.drawable.monophasic);
+
+	    		//to show the dialog    
+	    		dialog.show();
+	    	}//monophasic
+	    	
+	    	private void createBiphasicDialog(){
+	    		//Creates the new dialog 
+	    		Dialog dialog = new Dialog(SleepInfoActivity.this);
+        	
+	    		//points to the biphasic xml file 
+	    		dialog.setContentView(R.layout.biphasicdialog);
+            
+	    		dialog.setTitle("Biphasic sleeptype");
+            
+	    		//Makes it possible to cancel the dialog using the back key. 
+	    		dialog.setCancelable(true);
+            
+	    		//set up text that is to be shown in the dialog box 
+	    		TextView text = (TextView) dialog.findViewById(R.id.biphasictext);
+	    		text.setText(R.string.biphasic_info_text);
+	    		
+	    		//set up image view
+                ImageView img = (ImageView) 
+                dialog.findViewById(R.id.biphasic_picture);
+                img.setImageResource(R.drawable.biphasic);
+
+	    		//to show the dialog    
+	    		dialog.show();
+	    	}//biphasic
+	    	
+	    	private void createDymaxionDialog(){
+	    		//Creates the new dialog 
+	    		Dialog dialog = new Dialog(SleepInfoActivity.this);
+        	
+	    		//points to the dymaxion xml file 
+	    		dialog.setContentView(R.layout.dymaxiondialog);
+            
+	    		dialog.setTitle("Dymaxion sleeptype");
+            
+	    		//Makes it possible to cancel the dialog using the back key. 
+	    		dialog.setCancelable(true);
+            
+	    		//set up text that is to be shown in the dialog box 
+	    		TextView text = (TextView) dialog.findViewById(R.id.dymaxiontext);
+	    		text.setText(R.string.dymaxion_info_text);
+	    		
+	    		//set up image view
+                ImageView img = (ImageView) 
+                dialog.findViewById(R.id.dymaxion_picture);
+                img.setImageResource(R.drawable.dymaxion);
+
+	    		//to show the dialog    
+	    		dialog.show();
+	    	}//Dymaxion
+	    	
+	    	private void createEverymanDialog(){
+	    		//Creates the new dialog 
+	    		Dialog dialog = new Dialog(SleepInfoActivity.this);
+        	
+	    		//points to the everyman xml file 
+	    		dialog.setContentView(R.layout.everymandialog);
+            
+	    		dialog.setTitle("Everyman sleeptype");
+            
+	    		//Makes it possible to cancel the dialog using the back key. 
+	    		dialog.setCancelable(true);
+            
+	    		//set up text that is to be shown in the dialog box 
+	    		TextView text = (TextView) dialog.findViewById(R.id.everymantext);
+	    		text.setText(R.string.everyman_info_text);
+	    		
+	    		//set up image view
+                ImageView img = (ImageView) 
+                dialog.findViewById(R.id.everyman_picture);
+                img.setImageResource(R.drawable.everyman);
+
+	    		//to show the dialog    
+	    		dialog.show();
+	    	}//Everyman
+
 
    }//Activity 
 
