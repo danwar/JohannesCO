@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1.11"
-        android:text="Sleep App is an application that helps the user to actively live by the rules for a specific sleep style. The user decides the sleep style they want, and after that they will receive a visual schema with their sleep periods but alarms will also be generated for every wake-up time for the chosen schema. The user can also read about sleep in general and about different sleep styles.    VERSION 1.5" />
+        android:text="Sleep App is an application that helps the user to actively live by the rules for a specific sleep style. The user decides the sleep style they want, and after that they will receive a visual schema with their sleep periods but alarms will also be generated for every wake-up time for the chosen schema. The user can also read about sleep in general and about different sleep styles.    VERSION 1.2" />
 
     <TextView
         android:id="@+id/textView2"
