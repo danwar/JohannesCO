@@ -15,9 +15,15 @@
 package edu.chalmers.dat255.johannesco.sleepapp.main;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
-public class About extends Activity {
+public class About extends Activity implements OnClickListener{
+	private Button backButton;
+
 
 	/** Called when the activity is first created. */
 	@Override
@@ -25,7 +31,21 @@ public class About extends Activity {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.about);
 	
+	    backButton = (Button)findViewById(R.id.back_button); 
+        backButton.setOnClickListener(this);
 	    // TODO Auto-generated method stub
 	}
+
+
+public void onClick(View button) {
+    	
+    	switch (button.getId()) {
+    			
+    		case R.id.back_button:
+    			Intent intent3 = new Intent(this, SettingsActivity.class);
+    			startActivity(intent3);
+    		break;
+    	}
+    }
 
 }
