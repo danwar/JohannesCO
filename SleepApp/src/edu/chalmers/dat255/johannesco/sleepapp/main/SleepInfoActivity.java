@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class SleepInfoActivity extends Activity implements OnClickListener {
@@ -40,9 +41,28 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
 	    sleepStylesButton = (Button)findViewById(R.id.sleepStyles_Button); 
 	    
 	    //Giving the buttons sleepInfo Button a listener. 
-	    generalSleepInfoButton.setOnClickListener(new OnClickListener() {
-	    	
+	    generalSleepInfoButton.setOnClickListener(this);
+	    sleepStylesButton.setOnClickListener(this);
+	    
+	}//onCreate    	
 	    	public void onClick(View v) {
+	    		
+	    		switch (v.getId()){ 
+	    		
+	    		case R.id.generalSleepInfo_Button:
+	    			showGeneralSleepInfo();
+	    		break;
+	    		
+	    		case R.id.sleepStyles_Button:
+	    			showSleepStyles();
+	    		break;
+	    		
+	    		
+	    		}
+	    		
+	    	}//onClick
+	    	
+	    	private void showGeneralSleepInfo(){
 	    		//Creates the new dialog 
 	    		Dialog dialog = new Dialog(SleepInfoActivity.this);
         	
@@ -57,16 +77,44 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
 	    		//set up text that is to be shown in the dialog box 
 	    		TextView text = (TextView) dialog.findViewById(R.id.generalSleepInfoText);
 	    		text.setText(R.string.general_sleep_info);
+	    		
+	    		//set up image view
+                ImageView img = (ImageView) 
+                dialog.findViewById(R.id.zzz_image_generalsleepinfo);
+                img.setImageResource(R.drawable.ic_launcher);
 
 	    		//to show the dialog    
 	    		dialog.show();
-	    	}//on click
+	    	}//showGeneralSleepInfo 
 	    	
-	    });//new OnClicklistener
-                
-	    sleepStylesButton.setOnClickListener(new OnClickListener() {
+	  
+	    	private void showSleepStyles(){
+
+	    		//Creates the new dialog 
+	    		Dialog dialog = new Dialog(this);
+        	
+	    		//points to Sleepstyles xml file 
+	    		dialog.setContentView(R.layout.sleepstyledialog);
+            
+	    		dialog.setTitle("Different Sleep Styles");
+	    		
+	    		//set up button
+                Button ubermanButton = (Button) dialog.findViewById(R.id.uberman_button);
+                ubermanButton.setOnClickListener(new OnClickListener() {
+                public void onClick(View v) {
+                        createUbermanDialog();
+                    }
+                });
+            
+	    		//Makes it possible to cancel the dialog using the back button. 
+	    		dialog.setCancelable(true);
+
+	    		//to show the dialog    
+	    		dialog.show();
+	    
+	    	}//showSleepStyles
 	    	
-	    	public void onClick(View v) {
+	    	private void createUbermanDialog(){
 	    		//Creates the new dialog 
 	    		Dialog dialog = new Dialog(SleepInfoActivity.this);
         	
@@ -75,24 +123,21 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
             
 	    		dialog.setTitle("General Sleep Info");
             
-	    		//Makes it possible to cancel the dialog using the back button. 
+	    		//Makes it possible to cancel the dialog using the back key. 
 	    		dialog.setCancelable(true);
             
 	    		//set up text that is to be shown in the dialog box 
 	    		TextView text = (TextView) dialog.findViewById(R.id.generalSleepInfoText);
 	    		text.setText(R.string.general_sleep_info);
+	    		
+	    		//set up image view
+                ImageView img = (ImageView) 
+                dialog.findViewById(R.id.zzz_image_generalsleepinfo);
+                img.setImageResource(R.drawable.ic_launcher);
 
-            //to show the dialog    
-            dialog.show();
-	    
-	    }//onClick
-	   });
-	    
-	}//onCreate
+	    		//to show the dialog    
+	    		dialog.show();
+	    	}//showGeneralSettings 
 
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		
-	}
-}//Activity 
+   }//Activity 
 

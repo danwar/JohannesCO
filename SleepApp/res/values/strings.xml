@@ -217,6 +217,11 @@
     <string name="text_to_speech">App/Text-To-Speech</string>
     <string name="again">Again</string>
     <string name="test">test</string>
-    <string name="general_sleep_info">SLEEP INFO</string>
+    <string name="general_sleep_info">Här ska jag lägga in text men det funkar ej nu av någon anledning :S </string>
+    <string name="uberman">Uberman sleep (Crazy German)</string>
+    <string name="monophasic">monophasic sleep (28-hour sleep)</string>
+    <string name="biaphasic">Biphasic sleep</string>
+    <string name="dymaxion">Dymaxion sleep</string>
+    <string name="everyman">Everyman sleep</string>
  
 </resources>
