@@ -65,7 +65,8 @@ public final class R {
         public static final int schemasettings=0x7f030007;
         public static final int settings=0x7f030008;
         public static final int sleepinfo=0x7f030009;
-        public static final int sleepstyles=0x7f03000a;
+        public static final int sleepstyledialog=0x7f03000a;
+        public static final int sleepstyles=0x7f03000b;
     }
     public static final class string {
         public static final int activity_alarm_controller=0x7f040065;
