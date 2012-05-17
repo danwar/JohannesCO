@@ -118,22 +118,22 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
 	    		//Creates the new dialog 
 	    		Dialog dialog = new Dialog(SleepInfoActivity.this);
         	
-	    		//points to the generalSleepinfo xml file 
-	    		dialog.setContentView(R.layout.generalsleepinfo);
+	    		//points to the uberman xml file 
+	    		dialog.setContentView(R.layout.ubermandialog);
             
-	    		dialog.setTitle("General Sleep Info");
+	    		dialog.setTitle("Uberman");
             
 	    		//Makes it possible to cancel the dialog using the back key. 
 	    		dialog.setCancelable(true);
             
 	    		//set up text that is to be shown in the dialog box 
-	    		TextView text = (TextView) dialog.findViewById(R.id.generalSleepInfoText);
-	    		text.setText(R.string.general_sleep_info);
+	    		TextView text = (TextView) dialog.findViewById(R.id.ubermantext);
+	    		text.setText(R.string.uberman_info_text);
 	    		
 	    		//set up image view
                 ImageView img = (ImageView) 
-                dialog.findViewById(R.id.zzz_image_generalsleepinfo);
-                img.setImageResource(R.drawable.ic_launcher);
+                dialog.findViewById(R.id.uberman_picture);
+                img.setImageResource(R.drawable.uberman);
 
 	    		//to show the dialog    
 	    		dialog.show();

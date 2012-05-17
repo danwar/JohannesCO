@@ -63,6 +63,9 @@ public final class R {
         public static final int timeDisplay4=0x7f06001a;
         public static final int timeDisplay5=0x7f06001b;
         public static final int uberman_button=0x7f060026;
+        public static final int uberman_picture=0x7f06002b;
+        public static final int ubermanscroll=0x7f06002c;
+        public static final int ubermantext=0x7f06002d;
         public static final int zzz_image_generalsleepinfo=0x7f06000c;
     }
     public static final class layout {
@@ -78,6 +81,7 @@ public final class R {
         public static final int sleepinfo=0x7f030009;
         public static final int sleepstyledialog=0x7f03000a;
         public static final int sleepstyles=0x7f03000b;
+        public static final int ubermandialog=0x7f03000c;
     }
     public static final class string {
         public static final int activity_alarm_controller=0x7f040065;
@@ -231,6 +235,7 @@ public final class R {
         public static final int toggle_scenery=0x7f040037;
         public static final int translucent_background=0x7f040018;
         public static final int uberman=0x7f040096;
+        public static final int uberman_info_text=0x7f04009b;
         public static final int unbind_service=0x7f040044;
         public static final int violet=0x7f040028;
         public static final int voice_recognition=0x7f040091;

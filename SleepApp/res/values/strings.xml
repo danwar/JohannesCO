@@ -223,5 +223,6 @@
     <string name="biaphasic">Biphasic sleep</string>
     <string name="dymaxion">Dymaxion sleep</string>
     <string name="everyman">Everyman sleep</string>
+    <string name="uberman_info_text">Uberman sleepers nap for approximately 20 minutes six times a day (every four hours). This method was successfully adopted by bloggers Steve Pavlina and PureDoxyk – the latter coined the terms “Uberman” and “Everyman” for two of the popular sleeping schedules. Some Uberman sleepers nap for 25 or even 30 minutes instead of the regular 20.</string>
  
 </resources>
