@@ -1,22 +1,24 @@
-//   Copyright [2012] [Johannes Schygge, Daniel Warme, Karl Lawenius, Gusstav Mellgren]
-//
-//   Licensed under the Apache License, Version 2.0 (the "License");
-//   you may not use this file except in compliance with the License.
-//   You may obtain a copy of the License at
-//
-//       http://www.apache.org/licenses/LICENSE-2.0
-//
-//   Unless required by applicable law or agreed to in writing, software
-//   distributed under the License is distributed on an "AS IS" BASIS,
-//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//   See the License for the specific language governing permissions and
-//   limitations under the License.
+/*   Copyright [2012] [Johannes Schygge, Daniel Warme, Karl Lawenius, Gustav Mellgren]
+*
+*   Licensed under the Apache License, Version 2.0 (the "License");
+*   you may not use this file except in compliance with the License.
+*   You may obtain a copy of the License at
+*
+*       http://www.apache.org/licenses/LICENSE-2.0
+*
+*   Unless required by applicable law or agreed to in writing, software
+*   distributed under the License is distributed on an "AS IS" BASIS,
+*   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+*   See the License for the specific language governing permissions and
+*   limitations under the License.
+*/
 
 package edu.chalmers.dat255.johannesco.sleepapp.main;
 
 
 import java.io.IOException;
 
+//import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -29,14 +31,19 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Binder;
 import android.os.IBinder;
+import android.os.Looper;
 import android.os.Parcel;
 import android.os.RemoteException;
+//import android.view.View;
+//import android.view.View.OnClickListener;
+//import android.widget.Button;
 import android.widget.Toast;
 
 
 public class AlarmActivity_Service extends Service {
     NotificationManager mNM;
-
+    MediaPlayer mMediaPlayer;
+    Looper loop;
     @Override
     public void onCreate() {
         mNM = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
@@ -79,9 +86,10 @@ public class AlarmActivity_Service extends Service {
                 
             }
             Uri alert = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM); 
-       	 MediaPlayer mMediaPlayer = new MediaPlayer();
-       	 try {
-				mMediaPlayer.setDataSource(getApplicationContext(), alert);
+//            MediaPlayer mMediaPlayer = new MediaPlayer();
+            mMediaPlayer = new MediaPlayer();            
+            try {
+            	mMediaPlayer.setDataSource(getApplicationContext(), alert);
 			} catch (IllegalArgumentException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -95,26 +103,62 @@ public class AlarmActivity_Service extends Service {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-       	 final AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
-       	 if (audioManager.getStreamVolume(AudioManager.STREAM_ALARM) != 0) {
-       		 mMediaPlayer.setAudioStreamType(AudioManager.STREAM_ALARM);
-       		 mMediaPlayer.setLooping(false);
-       	            try {
-       	            	mMediaPlayer.prepare();
-						} catch (IllegalStateException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						} catch (IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-       	            mMediaPlayer.start();
-       	  }
-
-            // Done with our work...  stop the service!
-            AlarmActivity_Service.this.stopSelf();
-        }
+            final AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+            if (audioManager.getStreamVolume(AudioManager.STREAM_ALARM) != 0) {
+            	mMediaPlayer.setAudioStreamType(AudioManager.STREAM_ALARM);
+            	// TODO setLooping(true) när "av"-knapp funkar
+            	mMediaPlayer.setLooping(false);
+   	            try {
+   	            	mMediaPlayer.prepare();
+					} catch (IllegalStateException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+            mMediaPlayer.start();
+            // TODO "Av"-knapp funkar ej. Kan inte ha UI i en icke-UI-tråd. 
+            // http://developer.android.com/guide/topics/fundamentals/processes-and-threads.html
+//            showAlarmOffButton();
+            
+       	  }            
+        // Done with our work...  stop the service!            
+        AlarmActivity_Service.this.stopSelf();
+        }        
     };
+    
+//    private void showAlarmOffButton(){
+//		// Creates the new dialog
+//    	Dialog dialog = new Dialog(getApplicationContext());
+//	
+//		//points to the generalSleepinfo xml file 
+//		dialog.setContentView(R.layout.alarmoffview);
+//    
+//		dialog.setTitle("Alarm button");
+//    
+//		//Makes it possible to cancel the dialog using the back key. 
+//		dialog.setCancelable(false);
+//		
+//		Button stopButton = (Button) dialog.findViewById(R.id.alarmOffButton);
+//        stopButton.setOnClickListener(new OnClickListener() {      
+//	        public void onClick(View v) {
+//	        	try {
+//					mMediaPlayer.prepare();
+//				} catch (IllegalStateException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				} catch (IOException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//	        	mMediaPlayer.stop();
+//	        }
+//        });   
+//
+//		//to show the dialog    
+//		dialog.show();
+//	}//showAlarmOffButton
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -124,8 +168,7 @@ public class AlarmActivity_Service extends Service {
     /**
      * Show a notification while this service is running.
      */
-    @SuppressWarnings("deprecation")
-	private void showNotification() {
+    private void showNotification() {
         // In this sample, we'll use the same text for the ticker and the expanded notification
         CharSequence text = getText(R.string.alarm_service_started);
 

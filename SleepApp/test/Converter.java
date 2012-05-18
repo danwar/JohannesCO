@@ -1,5 +1,3 @@
-
-
 public class Converter {
     public int intToMillis(int hour, int min){
    	 int timeMillis = (hour * 60 + min) * 60 * 1000;
