@@ -2,11 +2,18 @@
 package edu.chalmers.dat255.johannesco.sleepapp.main;
 
 
+import java.io.IOException;
+
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Binder;
 import android.os.IBinder;
 import android.os.Parcel;
@@ -47,16 +54,49 @@ public class AlarmActivity_Service extends Service {
         public void run() {
             // Normally we would do some work here...  for our sample, we will
             // just sleep for 30 seconds.
-        	
-            long endTime = System.currentTimeMillis() + 15*1000;
+        
+        	long endTime = System.currentTimeMillis() + 3*1000;
             while (System.currentTimeMillis() < endTime) {
                 synchronized (mBinder) {
                     try {
                         mBinder.wait(endTime - System.currentTimeMillis());
                     } catch (Exception e) {
-                    }
+                    }                   
                 }
+                
             }
+            Uri alert = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM); 
+       	 MediaPlayer mMediaPlayer = new MediaPlayer();
+       	 try {
+				mMediaPlayer.setDataSource(getApplicationContext(), alert);
+			} catch (IllegalArgumentException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (SecurityException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IllegalStateException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+       	 final AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+       	 if (audioManager.getStreamVolume(AudioManager.STREAM_ALARM) != 0) {
+       		 mMediaPlayer.setAudioStreamType(AudioManager.STREAM_ALARM);
+       		 mMediaPlayer.setLooping(false);
+       	            try {
+       	            	mMediaPlayer.prepare();
+						} catch (IllegalStateException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+       	            mMediaPlayer.start();
+       	  }
 
             // Done with our work...  stop the service!
             AlarmActivity_Service.this.stopSelf();

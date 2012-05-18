@@ -17,6 +17,7 @@ public class MenuActivity extends Activity implements OnClickListener {
 	
 	private Button schemaButton, alarmButton, sleepInfoButton, settingsButton;
 
+
 /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
