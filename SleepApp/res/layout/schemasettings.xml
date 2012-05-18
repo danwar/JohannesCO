@@ -1,51 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
- <TextView
-        android:id="@+id/textView1"
+    <RelativeLayout 
+        android:id="@+id/InnerRelativeLayout"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"/>
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
 
     <Button
         android:id="@+id/changeschemaoption1_button"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="change schema option 1" />
+        android:text="Change schema option 1" />
 
-    <TextView
-        android:id="@+id/textView2"
+
+	            
+    </RelativeLayout>
+
+ 
+    
+    <RelativeLayout 
+        android:id="@+id/InnerRelativeLayout"
         android:layout_width="wrap_content"
-        android:layout_height="20dp"/>
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
 
-    <Button
+  		<Button
+	        android:id="@+id/back_button"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="Back" />
+            
+    </RelativeLayout>
+
+        <Button
         android:id="@+id/changeschemaoption2_button"
         android:layout_width="fill_parent"
         android:layout_height="70dp"
-        android:text="change schema option 2" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
+        android:text="Change schema option 2" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"/>
 
     <Button
         android:id="@+id/changeschemaoption3_button"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="change schema option 3" />
-       
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp"/>
-
-    <Button
-        android:id="@+id/back_button"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:text="Back" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="160dp"
+        android:text="Change schema option 3" />
 
-</LinearLayout>
+
+</RelativeLayout>

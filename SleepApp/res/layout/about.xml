@@ -53,10 +53,14 @@
     <Button
         android:id="@+id/back_button"
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/scrollView1"
+=======
+        android:layout_height="wrap_content"
+>>>>>>> 40f9b7bd538bc1f0937137012a961dbb730de9ae
         android:text="Back" />
 
 </RelativeLayout>

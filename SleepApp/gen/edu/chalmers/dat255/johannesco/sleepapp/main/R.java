@@ -26,12 +26,18 @@ public final class R {
         public static final int uberman=0x7f02000c;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int CheckBox01=0x7f060049;
         public static final int CheckBox02=0x7f060048;
+=======
+        public static final int CheckBox01=0x7f06004a;
+        public static final int CheckBox02=0x7f060049;
+>>>>>>> 40f9b7bd538bc1f0937137012a961dbb730de9ae
         public static final int CheckBox03=0x7f060047;
         public static final int CheckBox04=0x7f060046;
         public static final int CheckBox05=0x7f060045;
         public static final int CheckBox06=0x7f060044;
+<<<<<<< HEAD
         public static final int CheckBox07=0x7f060043;
         public static final int CheckBox08=0x7f060042;
         public static final int CheckBox09=0x7f060041;
@@ -106,6 +112,83 @@ public final class R {
         public static final int uberman_picture=0x7f06004e;
         public static final int ubermanscroll=0x7f06004f;
         public static final int ubermantext=0x7f060050;
+=======
+        public static final int CheckBox07=0x7f060042;
+        public static final int CheckBox08=0x7f060041;
+        public static final int CheckBox09=0x7f060040;
+        public static final int CheckBox10=0x7f06003f;
+        public static final int InnerRelativeLayout=0x7f06000b;
+        public static final int Licenc=0x7f060006;
+        public static final int RelativeLayout1=0x7f06000d;
+        public static final int TextView01=0x7f060048;
+        public static final int TextView02=0x7f060007;
+        public static final int TextView03=0x7f060043;
+        public static final int TextView05=0x7f06004b;
+        public static final int TextView06=0x7f06003e;
+        public static final int about_button=0x7f060035;
+        public static final int alarmOffButton=0x7f06000c;
+        public static final int alarm_button=0x7f06001e;
+        public static final int analogClock1=0x7f06002f;
+        public static final int back_button=0x7f060008;
+        public static final int biphasic_button=0x7f06003a;
+        public static final int biphasic_picture=0x7f06000e;
+        public static final int biphasicscroll=0x7f06000f;
+        public static final int biphasictext=0x7f060010;
+        public static final int changeoption1_button=0x7f060017;
+        public static final int changeoption2_button=0x7f060018;
+        public static final int changeoption3_button=0x7f060019;
+        public static final int changeschemaoption1_button=0x7f060030;
+        public static final int changeschemaoption2_button=0x7f060031;
+        public static final int changeschemaoption3_button=0x7f060032;
+        public static final int checkBox3=0x7f06004c;
+        public static final int checkBox7=0x7f06004d;
+        public static final int dymaxion_button=0x7f06003c;
+        public static final int dymaxion_picture=0x7f060011;
+        public static final int dymaxionscroll=0x7f060012;
+        public static final int dymaxiontext=0x7f060013;
+        public static final int everyman_button=0x7f06003b;
+        public static final int everyman_picture=0x7f060014;
+        public static final int everymanscroll=0x7f060015;
+        public static final int everymantext=0x7f060016;
+        public static final int generalSettings_button=0x7f060033;
+        public static final int generalSleepInfoScroll=0x7f06001b;
+        public static final int generalSleepInfoText=0x7f06001c;
+        public static final int generalSleepInfo_Button=0x7f060036;
+        public static final int header1=0x7f060026;
+        public static final int header2=0x7f060027;
+        public static final int imageView1=0x7f060001;
+        public static final int monophasic_button=0x7f060039;
+        public static final int monophasic_picture=0x7f060022;
+        public static final int monophasicscroll=0x7f060023;
+        public static final int monophasictext=0x7f060024;
+        public static final int pickTime=0x7f06002e;
+        public static final int relativeLayout1=0x7f060025;
+        public static final int schemaSettings_button=0x7f060034;
+        public static final int schema_button=0x7f06001d;
+        public static final int scrollView1=0x7f060005;
+        public static final int settings_button=0x7f060021;
+        public static final int sleepStyles_Button=0x7f060038;
+        public static final int sleep_info_button=0x7f060020;
+        public static final int start_alarm=0x7f060009;
+        public static final int stop_alarm=0x7f06000a;
+        public static final int submit_button=0x7f06004e;
+        public static final int survey_button=0x7f060037;
+        public static final int textView1=0x7f06001f;
+        public static final int textView2=0x7f060003;
+        public static final int textView3=0x7f060002;
+        public static final int textView4=0x7f060004;
+        public static final int textView5=0x7f060000;
+        public static final int timeDisplay=0x7f060028;
+        public static final int timeDisplay1=0x7f060029;
+        public static final int timeDisplay2=0x7f06002a;
+        public static final int timeDisplay3=0x7f06002b;
+        public static final int timeDisplay4=0x7f06002c;
+        public static final int timeDisplay5=0x7f06002d;
+        public static final int uberman_button=0x7f06003d;
+        public static final int uberman_picture=0x7f06004f;
+        public static final int ubermanscroll=0x7f060050;
+        public static final int ubermantext=0x7f060051;
+>>>>>>> 40f9b7bd538bc1f0937137012a961dbb730de9ae
         public static final int zzz_image_generalsleepinfo=0x7f06001a;
     }
     public static final class layout {

@@ -1,51 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-
-    <TextView
-        android:id="@+id/TextView03"
+    <RelativeLayout 
+        android:id="@+id/InnerRelativeLayout"
         android:layout_width="wrap_content"
-        android:layout_height="40dp" />
-
-    <Button
-        android:id="@+id/generalSleepInfo_Button"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:text="General Sleep Info" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
 
-    <TextView
-        android:id="@+id/TextView02"
+        <Button
+	        android:id="@+id/generalSleepInfo_Button"
+	        android:layout_width="match_parent"
+	        android:layout_height="70dp"
+	        android:text="General Sleep Info" />
+	            
+    </RelativeLayout>
+ 
+    
+    <RelativeLayout 
+        android:id="@+id/InnerRelativeLayout"
         android:layout_width="wrap_content"
-        android:layout_height="40dp" />
-
-    <Button
-        android:id="@+id/sleepStyles_Button"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:text="Sleep Styles" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
 
-    <TextView
-        android:id="@+id/TextView01"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp" />
+        <Button
+        android:id="@+id/back_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Back" />
+            
+    </RelativeLayout>
 
     <Button
         android:id="@+id/survey_button"
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="160dp"
         android:text="Take Survey" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp" />
-
     <Button
-        android:id="@+id/back_button"
+        android:id="@+id/sleepStyles_Button"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="Back" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
+        android:text="Sleep Styles" />
 
-</LinearLayout>
+</RelativeLayout>
