@@ -26,13 +26,26 @@ public final class R {
         public static final int uberman=0x7f02000c;
     }
     public static final class id {
+        public static final int CheckBox01=0x7f060048;
+        public static final int CheckBox02=0x7f060047;
+        public static final int CheckBox03=0x7f060046;
+        public static final int CheckBox04=0x7f060045;
+        public static final int CheckBox05=0x7f060044;
+        public static final int CheckBox06=0x7f060043;
+        public static final int CheckBox07=0x7f060042;
+        public static final int CheckBox08=0x7f060041;
+        public static final int CheckBox09=0x7f060040;
+        public static final int CheckBox10=0x7f06003f;
         public static final int Licenc=0x7f060006;
         public static final int TextView01=0x7f060037;
         public static final int TextView02=0x7f060007;
         public static final int TextView03=0x7f060034;
+        public static final int TextView05=0x7f060049;
+        public static final int TextView06=0x7f06003e;
         public static final int about_button=0x7f060033;
         public static final int alarm_button=0x7f06001d;
         public static final int analogClock1=0x7f06002d;
+        public static final int back_Button=0x7f06004d;
         public static final int back_button=0x7f060008;
         public static final int biphasic_button=0x7f06003a;
         public static final int biphasic_picture=0x7f06000c;
@@ -44,6 +57,8 @@ public final class R {
         public static final int changeschemaoption1_button=0x7f06002e;
         public static final int changeschemaoption2_button=0x7f06002f;
         public static final int changeschemaoption3_button=0x7f060030;
+        public static final int checkBox3=0x7f06004a;
+        public static final int checkBox7=0x7f06004b;
         public static final int dymaxion_button=0x7f06003c;
         public static final int dymaxion_picture=0x7f06000f;
         public static final int dymaxionscroll=0x7f060010;
@@ -73,6 +88,7 @@ public final class R {
         public static final int sleep_info_button=0x7f06001e;
         public static final int start_alarm=0x7f060009;
         public static final int stop_alarm=0x7f06000a;
+        public static final int submit_button=0x7f06004c;
         public static final int survey_button=0x7f060038;
         public static final int test=0x7f06000b;
         public static final int textView1=0x7f060015;
@@ -87,9 +103,9 @@ public final class R {
         public static final int timeDisplay4=0x7f06002a;
         public static final int timeDisplay5=0x7f06002b;
         public static final int uberman_button=0x7f06003d;
-        public static final int uberman_picture=0x7f06003e;
-        public static final int ubermanscroll=0x7f06003f;
-        public static final int ubermantext=0x7f060040;
+        public static final int uberman_picture=0x7f06004e;
+        public static final int ubermanscroll=0x7f06004f;
+        public static final int ubermantext=0x7f060050;
         public static final int zzz_image_generalsleepinfo=0x7f060019;
     }
     public static final class layout {

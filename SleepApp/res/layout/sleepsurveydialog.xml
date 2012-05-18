@@ -4,36 +4,165 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-   
-    <Button
-        android:id="@+id/monophasic_button"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/TextView06"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/monophasic" />
+        android:text="Are you tired/not tired in the morning?" />
 
-    <Button
-        android:id="@+id/biphasic_button"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/biaphasic" />
+        android:layout_height="wrap_content" >
 
-    <Button
-        android:id="@+id/everyman_button"
-        android:layout_width="match_parent"
+        <CheckBox
+            android:id="@+id/CheckBox10"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="Tired" />
+
+        <CheckBox
+            android:id="@+id/CheckBox09"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="Not Tired" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/everyman" />
-    
-     <Button
-        android:id="@+id/dymaxion_button"
+        android:text="Are you tired/not tired in the evening?" />
+
+    <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <CheckBox
+            android:id="@+id/CheckBox08"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="Tired" />
+
+        <CheckBox
+            android:id="@+id/CheckBox07"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="Not Tired" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/dymaxion" />
-    
-     <Button
-        android:id="@+id/uberman_button"
+        android:text="Do you have trouble falling asleep?" />
+
+    <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <CheckBox
+            android:id="@+id/CheckBox06"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="Yes" />
+
+        <CheckBox
+            android:id="@+id/CheckBox05"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="No" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/uberman" />
-    
+        android:text="Have you tried other sleep styles before?" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <CheckBox
+            android:id="@+id/CheckBox04"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="Yes" />
+
+        <CheckBox
+            android:id="@+id/CheckBox03"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="No" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are you in a relationship?" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <CheckBox
+            android:id="@+id/CheckBox02"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="Yes" />
+
+        <CheckBox
+            android:id="@+id/CheckBox01"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="No" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/TextView05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are you flexible when it comes to sleeping hours?" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="Yes" />
+
+        <CheckBox
+            android:id="@+id/checkBox7"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="No" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" " />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit" />
+
+        <Button
+            android:id="@+id/back_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back" />
+    </LinearLayout>
 
 </LinearLayout>

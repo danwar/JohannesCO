@@ -62,13 +62,13 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
 	    		break;
 	    		
 	    		case R.id.survey_button:
-	    			showSleepStyles();
+	    			showSleepSurvey();
 	    		break;
-    			
+	    		
 	    		case R.id.back_button:
-	    			Intent intent3 = new Intent(this, MenuActivity.class);
-	    			startActivity(intent3);
-	    		break;
+        			Intent intent3 = new Intent(this, MenuActivity.class);
+        			startActivity(intent3);
+        		break;
 	    		
 	    		}
 	    		
@@ -164,6 +164,30 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
 	    
 	    	}//showSleepStyles
 	    	
+	    	private void showSleepSurvey(){
+
+	    		//Creates the new dialog 
+	    		Dialog dialog = new Dialog(this);
+        	
+	    		//points to SleepSurvey xml file 
+	    		dialog.setContentView(R.layout.sleepsurveydialog);
+            
+	    		dialog.setTitle("Sleep Survey");
+	    		
+//	    		 //set up backbutton
+//                Button backButton = (Button) dialog.findViewById(R.id.back_button);
+//                backButton.setOnClickListener(new OnClickListener() {
+//              
+//                public void onClick(View v) {
+//                	createBiphasicDialog();
+//                }
+//                });
+	    		
+	    		//To show the dialog
+	    		dialog.show();
+	    		
+	    	};
+            
 	    	private void createUbermanDialog(){
 	    		//Creates the new dialog 
 	    		Dialog dialog = new Dialog(SleepInfoActivity.this);
