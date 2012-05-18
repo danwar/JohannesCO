@@ -29,7 +29,7 @@ import android.widget.TextView;
 
 public class SleepInfoActivity extends Activity implements OnClickListener {
 	
-	private Button generalSleepInfoButton, sleepStylesButton, backButton;
+	private Button generalSleepInfoButton, sleepStylesButton, sleepSurveyButton, backButton;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -40,12 +40,14 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
 	    //Initializing the buttons
 	    generalSleepInfoButton = (Button)findViewById(R.id.generalSleepInfo_Button); 
 	    sleepStylesButton = (Button)findViewById(R.id.sleepStyles_Button); 
+	    sleepSurveyButton = (Button)findViewById(R.id.survey_button); 
 	    backButton = (Button)findViewById(R.id.back_button); 
 	    
 	    //Giving the buttons sleepInfo Button a listener. 
 	    generalSleepInfoButton.setOnClickListener(this);
 	    sleepStylesButton.setOnClickListener(this);
-        backButton.setOnClickListener(this);
+	    sleepSurveyButton.setOnClickListener(this);
+	    backButton.setOnClickListener(this);
 	    
 	}//onCreate    	
 	    	public void onClick(View v) {
@@ -60,11 +62,14 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
 	    			showSleepStyles();
 	    		break;
 	    		
-    			
-	    		case R.id.back_button:
-	    			Intent intent3 = new Intent(this, MenuActivity.class);
-	    			startActivity(intent3);
+	    		case R.id.survey_button:
+	    			showSleepSurvey();
 	    		break;
+	    		
+	    		case R.id.back_button:
+        			Intent intent3 = new Intent(this, MenuActivity.class);
+        			startActivity(intent3);
+        		break;
 	    		
 	    		}
 	    		
@@ -160,6 +165,30 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
 	    
 	    	}//showSleepStyles
 	    	
+	    	private void showSleepSurvey(){
+
+	    		//Creates the new dialog 
+	    		Dialog dialog = new Dialog(this);
+        	
+	    		//points to SleepSurvey xml file 
+	    		dialog.setContentView(R.layout.sleepsurveydialog);
+            
+	    		dialog.setTitle("Sleep Survey");
+	    		
+//	    		 //set up backbutton
+//                Button backButton = (Button) dialog.findViewById(R.id.back_button);
+//                backButton.setOnClickListener(new OnClickListener() {
+//              
+//                public void onClick(View v) {
+//                	createBiphasicDialog();
+//                }
+//                });
+	    		
+	    		//To show the dialog
+	    		dialog.show();
+	    		
+	    	};
+            
 	    	private void createUbermanDialog(){
 	    		//Creates the new dialog 
 	    		Dialog dialog = new Dialog(SleepInfoActivity.this);

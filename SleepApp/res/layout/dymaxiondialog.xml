@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
-     <ImageView
+
+    <ImageView
         android:id="@+id/dymaxion_picture"
         android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="0dp" />
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_weight="0.06" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="Back" />
 
     <ScrollView
         android:id="@+id/dymaxionscroll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
+        android:layout_height="300px"
+        android:layout_marginTop="20dp" 
+        android:layout_below="@+id/dymaxion_picture">
+        
         <TextView
             android:id="@+id/dymaxiontext"
             android:layout_width="wrap_content"
@@ -23,4 +32,4 @@
             android:text="@+id/dymaxiontext" />
     </ScrollView>
 
-</LinearLayout>
+</RelativeLayout>
