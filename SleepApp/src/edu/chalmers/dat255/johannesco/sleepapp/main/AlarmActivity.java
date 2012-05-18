@@ -1,16 +1,17 @@
-//   Copyright [2012] [Johannes Schygge, Daniel Warme, Karl Lawenius, Gusstav Mellgren]
-//
-//   Licensed under the Apache License, Version 2.0 (the "License");
-//   you may not use this file except in compliance with the License.
-//   You may obtain a copy of the License at
-//
-//       http://www.apache.org/licenses/LICENSE-2.0
-//
-//   Unless required by applicable law or agreed to in writing, software
-//   distributed under the License is distributed on an "AS IS" BASIS,
-//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//   See the License for the specific language governing permissions and
-//   limitations under the License.
+/*   Copyright [2012] [Johannes Schygge, Daniel Warme, Karl Lawenius, Gustav Mellgren]
+*
+*   Licensed under the Apache License, Version 2.0 (the "License");
+*   you may not use this file except in compliance with the License.
+*   You may obtain a copy of the License at
+*
+*       http://www.apache.org/licenses/LICENSE-2.0
+*
+*   Unless required by applicable law or agreed to in writing, software
+*   distributed under the License is distributed on an "AS IS" BASIS,
+*   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+*   See the License for the specific language governing permissions and
+*   limitations under the License.
+*/
 
 package edu.chalmers.dat255.johannesco.sleepapp.main;
 
@@ -39,6 +40,9 @@ public class AlarmActivity extends Activity implements OnClickListener{
     
     // Converter
     Converter convert;
+    
+    // Alarmlogic
+    AlarmLogic al;
 
     /** Körs när activityn skapas. */
     @Override
@@ -50,6 +54,9 @@ public class AlarmActivity extends Activity implements OnClickListener{
         
         // Instansiera converter
         convert = new Converter();
+        
+        // Instansiera AlarmLogic
+        al = new AlarmLogic();
 
         // Skapa en IntentSender som ska starta en service som schemaläggs
         // med alarm manager.
@@ -63,8 +70,8 @@ public class AlarmActivity extends Activity implements OnClickListener{
         button.setOnClickListener(mStartAlarmListener);
         button = (Button)findViewById(R.id.stop_alarm);
         button.setOnClickListener(mStopAlarmListener);
-        button = (Button)findViewById(R.id.test);
-        button.setOnClickListener(mStop);
+//        button = (Button)findViewById(R.id.test);
+//        button.setOnClickListener(mStop);
         backButton = (Button)findViewById(R.id.back_button); 
         backButton.setOnClickListener(this);
     }
@@ -81,17 +88,23 @@ public class AlarmActivity extends Activity implements OnClickListener{
         	
         	sleepData = getSharedPreferences(Constants.filename, 0);
         	int returnedMillis = sleepData.getInt("sleepTime", 0);
-        	int diff = returnedMillis - millis;
-            long firstTime = SystemClock.elapsedRealtime() + diff;
+        	
+        	AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
+        	for (int i=0; i<6; i++){
+        		int diff = returnedMillis - millis;
+        		long firstTime = SystemClock.elapsedRealtime() + diff;        		
+        		am.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, firstTime, mAlarmSender);
+        	}
+        	
 
             // Schemalägg alarmet
-            AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
+            
 //            am.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
 //                            firstTime, 5*1000, mAlarmSender);
-            am.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, firstTime, mAlarmSender);
+            
 
             // Användaren får veta vad som händer
-            Toast.makeText(AlarmActivity.this, R.string.repeating_scheduled,
+            Toast.makeText(AlarmActivity.this, R.string.alarm_scheduled,
                     Toast.LENGTH_LONG).show();
         }
     };
@@ -103,35 +116,35 @@ public class AlarmActivity extends Activity implements OnClickListener{
             am.cancel(mAlarmSender);
 
             // Användaren får veta vad som händer
-            Toast.makeText(AlarmActivity.this, R.string.repeating_unscheduled,
+            Toast.makeText(AlarmActivity.this, R.string.alarm_unscheduled,
                     Toast.LENGTH_LONG).show();
 
         }
     };
     // TODO Lägg till funktion för att stänga av alarmet
-    private OnClickListener mStop = new OnClickListener() {
-        public void onClick(View v) {        	
-            // Avbryt alarmet
-            AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
-            am.cancel(mAlarmSender);
-            
-        	final Calendar c = Calendar.getInstance();
-//        	int hour = c.get(Calendar.HOUR_OF_DAY);
-//        	int min = c.get(Calendar.MINUTE);
-        	int millis = c.get(Calendar.MILLISECOND);
-        	
-            sleepData = getSharedPreferences(Constants.filename, 0);
-        	int returnedMillis = sleepData.getInt("sleepTime", 0);
-        	String test = "" + returnedMillis +"";
-//        	String test1 = "" +SystemClock.elapsedRealtime();
-        	String test1 = "" +millis;
-
-            // Användaren får veta vad som händer
-            Toast.makeText(AlarmActivity.this, test +"\t/\t" + test1,
-                    Toast.LENGTH_LONG).show();
-
-        }
-    };
+//    private OnClickListener mStop = new OnClickListener() {
+//        public void onClick(View v) {        	
+//            final Calendar c = Calendar.getInstance();
+////        	int hour = c.get(Calendar.HOUR_OF_DAY);
+////        	int min = c.get(Calendar.MINUTE);
+//        	int millis = c.get(Calendar.MILLISECOND);
+//        	
+//          sleepData = getSharedPreferences(Constants.filename, 0);
+//        	int returnedMillis = sleepData.getInt("sleepTime", 0);
+//        	String test = "";
+////        	String test1 = "" +SystemClock.elapsedRealtime();
+//        	al.sleepSetup(returnedMillis);
+//        	for (int i=0; i<6; i++){
+//        		test = test + "\t" + convert.millisToHour(al.sleep[i])+":"+convert.millisToMin(al.sleep[i]);
+//        	}
+//        	String test1 = "" +millis;
+//
+//            // Användaren får veta vad som händer
+//            Toast.makeText(AlarmActivity.this, test1 +"\n" + test,
+//                    Toast.LENGTH_LONG).show();
+//
+//        }
+//    };
 
     public void onClick(View button) {
     	

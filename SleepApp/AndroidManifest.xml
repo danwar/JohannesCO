@@ -34,7 +34,7 @@
 
         <receiver android:name=".RepeatingAlarm" android:process=":remote" />
 
-        <activity android:name=".AlarmController" android:label="@string/activity_alarm_controller">
+        <activity android:name=".AlarmController">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.SAMPLE_CODE" />
@@ -43,7 +43,7 @@
 
         <service android:name=".AlarmActivity_Service" android:process=":remote" />
 
-        <activity android:name=".AlarmActivity" android:label="@string/activity_alarm_service">
+        <activity android:name=".AlarmActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.SAMPLE_CODE" />
