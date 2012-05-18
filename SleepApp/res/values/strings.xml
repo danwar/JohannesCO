@@ -217,7 +217,7 @@
     <string name="text_to_speech">App/Text-To-Speech</string>
     <string name="again">Again</string>
     <string name="test">test</string>
-    <string name="general_sleep_info">Här ska jag lägga in text men det funkar ej nu av någon anledning :S </string>
+    <string name="general_sleep_info">Polyphasic sleep, a term coined by early 20th-century psychologist J.S. Szymanski,refers to the practice of sleeping multiple times in a 24-hour period—usually more than two, in contrast to biphasic sleep (twice per day) or monophasic sleep (once per day). It does not imply any particular sleep schedule. The circadian rhythm disorder known as irregular sleep-wake syndrome is an example of polyphasic sleep in humans. Polyphasic sleep is common in many animals, and is believed to be the ancestral sleep state.The term polyphasic sleep is also used by an online community that experiments with alternative sleeping schedules to achieve more time awake each day.</string>
     <string name="uberman">Uberman sleep (Crazy German)</string>
     <string name="monophasic">monophasic sleep (28-hour sleep)</string>
     <string name="biaphasic">Biphasic sleep</string>

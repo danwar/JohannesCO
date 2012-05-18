@@ -167,30 +167,34 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
 	    	private void showSleepSurvey(){
 
 	    		//Creates the new dialog 
-	    		Dialog dialog = new Dialog(this);
+	    		final Dialog dialog = new Dialog(SleepInfoActivity.this);
         	
 	    		//points to SleepSurvey xml file 
 	    		dialog.setContentView(R.layout.sleepsurveydialog);
             
 	    		dialog.setTitle("Sleep Survey");
 	    		
-//	    		 //set up backbutton
-//                Button backButton = (Button) dialog.findViewById(R.id.back_button);
-//                backButton.setOnClickListener(new OnClickListener() {
-//              
-//                public void onClick(View v) {
-//                	createBiphasicDialog();
-//                }
-//                });
+	    		//Makes it possible to cancel the dialog using the back key. 
+	    		dialog.setCancelable(true);
+	    		
+	    		 //set up backbutton
+                Button backButton = (Button) dialog.findViewById(R.id.back_button);
+                backButton.setOnClickListener(new OnClickListener() {
+              
+                public void onClick(View v) {
+                	back(dialog);
+                }
+                });
+
 	    		
 	    		//To show the dialog
 	    		dialog.show();
 	    		
-	    	};
+	    	}//showSleepSurvey
             
 	    	private void createUbermanDialog(){
 	    		//Creates the new dialog 
-	    		Dialog dialog = new Dialog(SleepInfoActivity.this);
+	    		final Dialog dialog = new Dialog(SleepInfoActivity.this);
         	
 	    		//points to the uberman xml file 
 	    		dialog.setContentView(R.layout.ubermandialog);
@@ -208,6 +212,16 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
                 ImageView img = (ImageView) 
                 dialog.findViewById(R.id.uberman_picture);
                 img.setImageResource(R.drawable.uberman);
+                
+                //set up backbutton
+                Button backButton = (Button) dialog.findViewById(R.id.back_button);
+                backButton.setOnClickListener(new OnClickListener() {
+              
+                public void onClick(View v) {
+                	back(dialog);
+                }
+                });
+
 
 	    		//to show the dialog    
 	    		dialog.show();
@@ -215,7 +229,7 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
 	    	
 	    	private void createMonophasicDialog(){
 	    		//Creates the new dialog 
-	    		Dialog dialog = new Dialog(SleepInfoActivity.this);
+	    		final Dialog dialog = new Dialog(SleepInfoActivity.this);
         	
 	    		//points to the monophasic xml file 
 	    		dialog.setContentView(R.layout.monophasicdialog);
@@ -233,6 +247,16 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
                 ImageView img = (ImageView) 
                 dialog.findViewById(R.id.monophasic_picture);
                 img.setImageResource(R.drawable.monophasic);
+                
+                //set up backbutton
+                Button backButton = (Button) dialog.findViewById(R.id.back_button);
+                backButton.setOnClickListener(new OnClickListener() {
+              
+                public void onClick(View v) {
+                	back(dialog);
+                }
+                });
+
 
 	    		//to show the dialog    
 	    		dialog.show();
@@ -240,7 +264,7 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
 	    	
 	    	private void createBiphasicDialog(){
 	    		//Creates the new dialog 
-	    		Dialog dialog = new Dialog(SleepInfoActivity.this);
+	    		final Dialog dialog = new Dialog(SleepInfoActivity.this);
         	
 	    		//points to the biphasic xml file 
 	    		dialog.setContentView(R.layout.biphasicdialog);
@@ -258,6 +282,16 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
                 ImageView img = (ImageView) 
                 dialog.findViewById(R.id.biphasic_picture);
                 img.setImageResource(R.drawable.biphasic);
+                
+                //set up backbutton
+                Button backButton = (Button) dialog.findViewById(R.id.back_button);
+                backButton.setOnClickListener(new OnClickListener() {
+              
+                public void onClick(View v) {
+                	back(dialog);
+                }
+                });
+
 
 	    		//to show the dialog    
 	    		dialog.show();
@@ -265,7 +299,7 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
 	    	
 	    	private void createDymaxionDialog(){
 	    		//Creates the new dialog 
-	    		Dialog dialog = new Dialog(SleepInfoActivity.this);
+	    		final Dialog dialog = new Dialog(SleepInfoActivity.this);
         	
 	    		//points to the dymaxion xml file 
 	    		dialog.setContentView(R.layout.dymaxiondialog);
@@ -283,6 +317,16 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
                 ImageView img = (ImageView) 
                 dialog.findViewById(R.id.dymaxion_picture);
                 img.setImageResource(R.drawable.dymaxion);
+                
+                //set up backbutton
+                Button backButton = (Button) dialog.findViewById(R.id.back_button);
+                backButton.setOnClickListener(new OnClickListener() {
+              
+                public void onClick(View v) {
+                	back(dialog);
+                }
+                });
+
 
 	    		//to show the dialog    
 	    		dialog.show();
@@ -290,7 +334,7 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
 	    	
 	    	private void createEverymanDialog(){
 	    		//Creates the new dialog 
-	    		Dialog dialog = new Dialog(SleepInfoActivity.this);
+	    		final Dialog dialog = new Dialog(SleepInfoActivity.this);
         	
 	    		//points to the everyman xml file 
 	    		dialog.setContentView(R.layout.everymandialog);
@@ -308,10 +352,23 @@ public class SleepInfoActivity extends Activity implements OnClickListener {
                 ImageView img = (ImageView) 
                 dialog.findViewById(R.id.everyman_picture);
                 img.setImageResource(R.drawable.everyman);
+                
+                //set up backbutton
+                Button backButton = (Button) dialog.findViewById(R.id.back_button);
+                backButton.setOnClickListener(new OnClickListener() {
+              
+                public void onClick(View v) {
+                	back(dialog);
+                }
+                });
 
 	    		//to show the dialog    
 	    		dialog.show();
 	    	}//Everyman
+	    	
+	    	private void back(Dialog dialog){
+	    		dialog.dismiss();
+	    	}
 
 
    }//Activity 
