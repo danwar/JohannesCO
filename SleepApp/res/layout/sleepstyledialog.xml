@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+   
+    <Button
+        android:id="@+id/monophasic_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/monophasic" />
+
+    <Button
+        android:id="@+id/biphasic_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/biaphasic" />
+
+    <Button
+        android:id="@+id/everyman_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/everyman" />
+    
+     <Button
+        android:id="@+id/dymaxion_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dymaxion" />
+    
+     <Button
+        android:id="@+id/uberman_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/uberman" />
     
 
-</ListView>
+</LinearLayout>

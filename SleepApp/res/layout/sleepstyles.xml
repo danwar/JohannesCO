@@ -4,9 +4,34 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <Spinner
-        android:id="@+id/sleepstyles_spinner"
+    <Button
+        android:id="@+id/uberman_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Uberman sleep (Crazy German)" />
+
+    <Button
+        android:id="@+id/monophasic_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Monophasic (28- hour sleep)" />
+
+    <Button
+        android:id="@+id/biphasic_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Biaphasic sleep" />
+
+    <Button
+        android:id="@+id/dymaxion_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dymaxion sleep" />
+
+    <Button
+        android:id="@+id/everyman_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Everyman sleep" />
 
 </LinearLayout>
